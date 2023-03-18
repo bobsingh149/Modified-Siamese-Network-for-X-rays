@@ -435,13 +435,13 @@ for n in range(len(targets)):
     show_images([batch[0][n], batch[1][n]], mLabels[targets[n]])
 '''
 scores=[]
-for i in range(3,10):
+for i in range(1,20):
     n_validate = N_way_validate(df_X_test, image_shape, n=i)
     score=n_validate.score(model)
     print(score)
     scores.append(score)
     
-print(score)
+print(scores)
     
     
 

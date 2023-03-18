@@ -40,7 +40,7 @@ print(f"Total normal_images: {len(normal_images)}")
 print(f"Total bacteria_images: {len(bacteria_images)}")
 
 
-image_size = (224, 224)
+image_size = (100, 100)
 
 def resize_image(img_array):
     img = Image.fromarray(img_array)

@@ -535,14 +535,6 @@ batch, targets = N_way_validate(df, image_shape).get_batch()
 for n in range(len(targets)):
     show_images([batch[0][n], batch[1][n]], mLabels[targets[n]])
 '''
-scores=[]
-for i in range(3,10):
-    n_validate = N_way_validate(df_X_test, image_shape, n=i)
-    score=n_validate.score(model)
-    print(score)
-    scores.append(score)
-    
-print(score)
 
 
 def resize_image(img_array):
@@ -624,7 +616,18 @@ def get_hard_pair(df1,df2,same=True):
      return hard_img1,hard_img2
  
     
+ 
 img1,img2=get_hard_pair(df_X_train,df_X_train,same=True)
+
+scores=[]
+for i in range(3,10):
+    n_validate = N_way_validate(df_X_test, image_shape, n=i)
+    score=n_validate.score(model)
+    print(score)
+    scores.append(score)
+    
+print(scores)
+
     
     
 
